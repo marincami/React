@@ -12,7 +12,7 @@ const User = () => {
       <Title user="Lucas"/>
       <TitleGray user="Cesar" age="30" color="gray"/>
       <Title user="Camila" age="26" color="pink"/>
-      <Title user="Jery" age="26" color="yellow"/>
+      <Title user="Jery" age="20" color="yellow"/>
       <p>Your friends list is:</p>
       {country && <p>You are from {country}</p>}
       <ul>
