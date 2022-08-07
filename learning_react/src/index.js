@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import User from './components/User';
 import FormSignIn from './components/FormSignIn';
+import Counter from './components/CounterClass';
 
 const App = () => {
   const [sesion, changeSesionState] = useState(false);
@@ -11,6 +12,8 @@ const App = () => {
       {sesion === true ? 
       <div>
         <User /> 
+        <Counter numberToIncrease={10}/>
+        <Counter numberToIncrease={5}/>
         <button onClick={() => changeSesionState(false)}>Sign out</button>
       </div>
       : 
