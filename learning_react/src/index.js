@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import User from './components/User';
 import FormSignIn from './components/FormSignIn';
-import Counter from './components/CounterClass';
+import CounterClass from './components/CounterClass';
+import Counter from './components/Counter';
 
 const App = () => {
   const [sesion, changeSesionState] = useState(false);
@@ -12,8 +13,11 @@ const App = () => {
       {sesion === true ? 
       <div>
         <User /> 
+        {/*   
         <Counter numberToIncrease={10}/>
-        <Counter numberToIncrease={5}/>
+      */}
+          <CounterClass numberToIncrease={10}/>
+          <CounterClass numberToIncrease={5}/>      
         <button onClick={() => changeSesionState(false)}>Sign out</button>
       </div>
       : 
@@ -21,7 +25,9 @@ const App = () => {
         <p>You haven't logged in</p>
         <FormSignIn changeSesionState={changeSesionState}/>
 
-        {/** <button onClick={() => changeSesionState(true)}>Sign in</button>  */}
+        {/*
+          <button onClick={() => changeSesionState(true)}>Sign in</button>
+        */}
       </div>
       }
     </>

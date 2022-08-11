@@ -1,11 +1,29 @@
-import React, { Component } from 'react';
 // example Class Components
-class Counter extends Component {
+import React, { Component } from 'react';
+
+class CounterClass extends Component {
 
 	// to use the props
 	constructor(props){
 		super(props);
 		this.state = { counter: 0 }; // old way to set the initial state
+	}
+
+	// calls API
+	componentDidMount() {
+		console.log('render the DOM');
+	}
+
+	// updated, the state was changed
+	componentDidUpdate(previousProps, previousState) {
+		console.log('updated the DOM');
+		console.log('Previous Props:', previousProps);
+		console.log('Previous State:', previousState);
+	}
+
+	// before unmount, close component, finish the call to API
+	componentWillUnmount() {
+		console.log('Bye Component');
 	}
 
 	// function that returns an object to can set the states
@@ -41,4 +59,4 @@ class Counter extends Component {
 	}
 }
 
-export default Counter;
+export default CounterClass;
