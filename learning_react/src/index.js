@@ -4,25 +4,25 @@ import User from './components/User';
 import FormSignIn from './components/FormSignIn';
 import CounterClass from './components/CounterClass';
 import Counter from './components/Counter';
+import './index.css'
 
 const App = () => {
   const [sesion, changeSesionState] = useState(false);
 
   return (
-    <>
+    <div className="container">
       {sesion === true ? 
       <div>
         <User /> 
-        {/*   
         <Counter numberToIncrease={10}/>
-      */}
+        {/*   
           <CounterClass numberToIncrease={10}/>
           <CounterClass numberToIncrease={5}/>      
+        */}
         <button onClick={() => changeSesionState(false)}>Sign out</button>
       </div>
       : 
       <div>
-        <p>You haven't logged in</p>
         <FormSignIn changeSesionState={changeSesionState}/>
 
         {/*
@@ -30,7 +30,7 @@ const App = () => {
         */}
       </div>
       }
-    </>
+    </div>
   )     
 }
 
